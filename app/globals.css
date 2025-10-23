@@ -3,6 +3,9 @@
 
 :root {
   --background: hsl(0 0% 100%);
+  --mainBackground: hsl(240, 37%, 97%);
+  --tages:hsla(0, 0%, 40%, 1);
+  --bg:hsl(219, 51%, 42%, 0.14);
   --foreground: hsl(210 25% 7.8431%);
   --card: hsl(180 6.6667% 97.0588%);
   --card-foreground: hsl(210 25% 7.8431%);
