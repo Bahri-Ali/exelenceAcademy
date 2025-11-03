@@ -55,28 +55,28 @@ export default function Pagination({
     onPageChange(page);
   };
 
-  // 📱 واجهة الهاتف
+  // mobile version 
   if (isMobile) {
     return (
       <nav className={`flex items-center justify-center gap-3 sm:hidden ${className}`}>
         <button
           onClick={() => goTo(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-4 py-2 rounded-lg text-sm font-medium bg-white text-gray-700 border border-gray-300 shadow-sm 
-                     hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+          className="px-4 py-2 rounded-lg  text-sm font-medium  bg-(--primary) text-white   shadow-sm 
+                     disabled:opacity-40 disabled:cursor-not-allowed transition-all"
         >
           السابق
         </button>
 
-        <div className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-800 bg-gray-100 border border-gray-200">
+        <div className="px-4 py-2 rounded-lg text-sm font-semibold text-(--tages) bg-gray-100 border border-gray-200">
           {currentPage} / {totalPages}
         </div>
 
         <button
           onClick={() => goTo(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="px-4 py-2 rounded-lg text-sm font-medium bg-white text-gray-700 border border-gray-300 shadow-sm 
-                     hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+          className="px-4 py-2 rounded-lg text-sm font-medium cursor-pointer bg-(--primary) text-white border  
+                      disabled:opacity-40 disabled:cursor-not-allowed transition-all"
         >
           التالي
         </button>
@@ -92,8 +92,7 @@ export default function Pagination({
       <button
         onClick={() => goTo(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-3 py-1.5 sm:px-4 rounded-md text-sm sm:text-base bg-white text-gray-700 border border-gray-300 shadow-sm 
-                   hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+        className="px-3 py-1.5 sm:px-4 rounded-md text-sm sm:text-base bg-(--primary)  text-white cursor-pointer"
       >
         السابق
       </button>
@@ -101,18 +100,18 @@ export default function Pagination({
       <div className="flex items-center space-x-2 sm:space-x-3">
         {range.map((item, idx) =>
           item === '...' ? (
-            <span key={idx} className="px-3 text-gray-400 select-none">
+            <span key={idx} className="px-3 text-(--tages) select-none">
               ...
             </span>
           ) : (
             <button
               key={idx}
               onClick={() => goTo(item as number)}
-              className={`px-3 py-1.5 sm:px-4 rounded-md text-sm sm:text-base border shadow-sm transition-all
+              className={`px-3 py-1.5 sm:px-4 rounded-md text-sm sm:text-base border shadow-sm transition-all cursor-pointer
                 ${
                   item === currentPage
                     ? 'bg-(--primary) text-white'
-                    : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                    : 'bg-white text-(--tages) border-gray-300 hover:bg-gray-50'
                 }`}
             >
               {item}
@@ -124,8 +123,7 @@ export default function Pagination({
       <button
         onClick={() => goTo(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-3 py-1.5 sm:px-4 rounded-md text-sm sm:text-base bg-white text-gray-700 border border-gray-300 shadow-sm 
-                   hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+        className="px-3 py-1.5 sm:px-4 rounded-md text-sm sm:text-base bg-(--primary) text-white  cursor-pointer"
       >
         التالي
       </button>

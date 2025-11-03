@@ -20,7 +20,7 @@ export default function CoursesPage() {
     duration: 'all',
     level: 'all',
   });
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   const handleFilterChange = (key: keyof FilterState, value: string) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
@@ -54,7 +54,7 @@ export default function CoursesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-foreground">
               {t('Suggested-courses')}
             </h2>
-            <p className="text-center text-muted-foreground">اكتشف أفضل الدورات التعليمية في العلوم الإسلامية</p>
+            <p className="text-center text-(--tages)">{t('courcesDesc')}</p>
           </motion.div>
 
           <motion.div

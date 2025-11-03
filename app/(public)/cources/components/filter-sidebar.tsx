@@ -29,8 +29,9 @@ export function FiltersSidebar({ filters, onFilterChange }: FiltersSidebarProps)
                 id={category}
                 checked={filters.category === category || filters.category === "الكل"}
                 onCheckedChange={() => onFilterChange("category", category)}
+                className="border-(--primary)"
               />
-              <Label htmlFor={category} className="text-sm font-normal cursor-pointer text-foreground">
+              <Label htmlFor={category} className="text-sm  font-normal cursor-pointer text-foreground">
                 {category}
               </Label>
             </div>
@@ -42,8 +43,8 @@ export function FiltersSidebar({ filters, onFilterChange }: FiltersSidebarProps)
         <h3 className="text-lg font-semibold mb-4 text-foreground">المستوى</h3>
         <RadioGroup value={filters.level} onValueChange={(value) => onFilterChange("level", value)}>
           {levels.map((level) => (
-            <div key={level.value} className="flex items-center gap-2">
-              <RadioGroupItem value={level.value} id={level.value} />
+            <div key={level.value} className="flex items-center  gap-2">
+              <RadioGroupItem value={level.value} className="border-(--primary)" id={level.value} />
               <Label htmlFor={level.value} className="text-sm font-normal cursor-pointer text-foreground">
                 {level.label}
               </Label>
@@ -57,7 +58,7 @@ export function FiltersSidebar({ filters, onFilterChange }: FiltersSidebarProps)
         <RadioGroup value={filters.certificateType} onValueChange={(value) => onFilterChange("certificateType", value)}>
           {certificateTypes.map((cert) => (
             <div key={cert.value} className="flex items-center gap-2">
-              <RadioGroupItem value={cert.value} id={cert.value} />
+              <RadioGroupItem className="border-(--primary)" value={cert.value} id={cert.value} />
               <Label htmlFor={cert.value} className="text-sm font-normal cursor-pointer text-foreground">
                 {cert.label}
               </Label>
@@ -70,14 +71,14 @@ export function FiltersSidebar({ filters, onFilterChange }: FiltersSidebarProps)
         <h3 className="text-lg font-semibold mb-4 text-foreground">السعر</h3>
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <Checkbox id="free" />
+            <Checkbox id="free" className="border-(--primary)" />
             <Label htmlFor="free" className="text-sm font-normal cursor-pointer text-foreground">
               مجاني
             </Label>
           </div>
           <div className="flex items-center gap-2">
-            <Checkbox id="paid" />
-            <Label htmlFor="paid" className="text-sm font-normal cursor-pointer text-foreground">
+            <Checkbox id="paid" className="border-(--primary)" />
+            <Label htmlFor="paid"  className="text-sm font-normal cursor-pointer text-foreground">
               مدفوع
             </Label>
           </div>

@@ -18,10 +18,10 @@ export default function Cource() {
         <div className="absolute -bottom-5 left-1/2  -translate-x-1/2 flex items-center bg-white rounded-full shadow-md px-3 py-1">
           <div className="flex -space-x-2">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="w-6 h-6  bg-(--primary) rounded-full border-2 border-white " />
+              <div key={i} className="w-6 h-6  bg-[url(/person.png)] bg-center bg-cover rounded-full border-2 border-white " />
             ))}
           </div>
-          <span className="ml-2 text-sm font-semibold text-gray-700 whitespace-nowrap">+40 طالب</span>
+          <span className="ml-2 text-sm font-semibold text-(--tages) whitespace-nowrap">+40 طالب</span>
         </div>
       </div>
 
@@ -30,7 +30,7 @@ export default function Cource() {
           أساسيات تصميم واجهة المستخدم
         </h2>
 
-        <div className="flex flex-wrap justify-center sm:justify-between items-center text-gray-600 mt-2 text-sm sm:text-base">
+        <div className="flex flex-wrap justify-center sm:justify-between items-center text-(--tages) mt-2 text-sm sm:text-base">
           <p>
             <span className="font-semibold">المدة:</span> 8 أسابيع
           </p>
@@ -42,8 +42,8 @@ export default function Cource() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-between items-center mt-6 gap-3">
-          <div className="text-xl sm:text-2xl font-bold text-gray-900">
-            2000 <span className="text-sm text-gray-500">DA</span>
+          <div className="text-xl sm:text-2xl font-bold text-(--tages)">
+            2000 <span className="text-sm text-(--tages)0">DA</span>
           </div>
           <button className="w-full sm:w-auto bg-(--primary) cursor-pointer text-white font-semibold py-2 px-6 rounded-xl shadow-md transition-all duration-200">
             سجل الآن

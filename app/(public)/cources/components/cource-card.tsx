@@ -22,12 +22,12 @@ export function CourseCard({ course, index }: CourseCardProps) {
       whileHover={{ y: -8 }}
     >
       <Link href={`/cources/${course.id}`}>
-        <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300 border-border bg-card group cursor-pointer">
+        <Card className="overflow-hidden h-full w-[80%] sm:w-full md:w-full mx-auto hover:shadow-xl transition-all duration-300 border-border bg-card group cursor-pointer">
           <div className="relative overflow-hidden">
             <Image
-              src={course.image || "/placeholder.svg"}
+              src={course.image}
               alt={course.title}
-              className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-48 object-cover  transition-transform duration-300 group-hover:scale-110"
               width={100}
               height={100}
             />
@@ -38,9 +38,9 @@ export function CourseCard({ course, index }: CourseCardProps) {
             )}
             <div className="absolute bottom-3 right-3 flex -space-x-2">
               {course.enrolledStudents.slice(0, 3).map((student, idx) => (
-                <Avatar key={idx} className="border-2 border-card w-8 h-8">
-                  <AvatarImage src={student.avatar || "/person.png"} alt={student.name} />
-                  <AvatarFallback>{student.name[0]}</AvatarFallback>
+                <Avatar key={idx} className="border-1 border-white w-6 h-6 bg-(--primary)">
+                  <AvatarImage src='/person.png' alt={student.name} />
+                  {/* <AvatarFallback>{student.name[0]}</AvatarFallback> */}
                 </Avatar>
               ))}
               {course.enrolledStudents.length > 3 && (
@@ -55,7 +55,7 @@ export function CourseCard({ course, index }: CourseCardProps) {
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span className="bg-accent text-accent-foreground px-2 py-1 rounded">{course.category}</span>
               <span className="flex items-center gap-1">
-                <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                <Star className="w-3 h-3 fill-(--chart-3) text-(--chart-3)" />
                 {course.rating}
               </span>
             </div>

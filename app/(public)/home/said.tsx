@@ -2,17 +2,19 @@
 import Image from 'next/image';
 import { Star } from 'lucide-react';
 import i18n from '../../in18/i18n';
+import { useTranslation } from 'react-i18next';
 export default function Said() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-[50vh] flex flex-col justify-evenly w-[90%] md:w-[80%] m-auto py-6">
       <div
-        className={`flex flex-col  h-[10%] text-center gap-10 ${i18n.language === 'ar' ? 'items-start' : 'items-end'} `}
+        className={`flex flex-col  h-[10%] text-center gap-10 ${i18n.language === 'ar' ? 'items-end' : 'items-start'} `}
       >
         <h1 className="font-cairo font-bold text-[24px] sm:text-[28px] md:text-[36px] leading-[120%] text-(--primary)">
-          قالوا عنا
+          {t('They-said')}
         </h1>
         <h3 className="font-cairo font-medium text-[14px] sm:text-[16px] md:text-[18px] text-(--tages) leading-[140%] tracking-[0.3px]">
-          قصص نجاح طلابنا
+          {t('success-stories')}
         </h3>
       </div>
 

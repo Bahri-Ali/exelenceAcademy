@@ -23,9 +23,9 @@ export default function NavBar() {
   ];
 
   return (
-    <nav dir={i18n.language} className={` flex items-center border-b-[2px] sm:border-b-0  h-[82px] w-[100%] sm:w-[90%] m-auto justify-between  `}>
-      <div className={`w-[172px] h-[40] sm:m-0 ${i18n.language === 'ar'?'ml-[5%]':'mr-[5%]'} `}>
-        <Image src="/mainLogo.png" width={172} height={40} alt="Logo" />
+    <nav dir={i18n.language} className={` flex items-center border-b-[2px] sm:border-b-0 border-(primary)  h-[82px] w-[100%] sm:w-[90%] m-auto justify-around gap-x-[30%] sm:gap-0 md:gap-0 sm:justify-between md:justify-between  `}>
+      <div className={` w-[172px]  h-auto sm:m-0  `}>
+        <Image src="/mainLogo.png"  width={172} height={40} alt="Logo" />
       </div>
 
       <div className={`hidden md:flex ${i18n.language=='ar'?'flex-row' : 'flex-row-reverse'} items-center gap-6 `}>
