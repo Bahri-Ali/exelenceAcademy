@@ -3,7 +3,7 @@
 import type { Course } from "../lib/types"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Star, Clock, Users } from "lucide-react"
 import { motion } from "framer-motion"
 import Link  from "next/link"
@@ -79,7 +79,7 @@ export function CourseCard({ course, index }: CourseCardProps) {
 
             <div className="flex items-center gap-2 pt-2">
               <span className="text-2xl font-bold text-primary">{course.price}</span>
-              <span className="text-sm text-muted-foreground">ريال</span>
+              <span className="text-sm text-muted-foreground">DA</span>
               {course.originalPrice && (
                 <span className="text-sm text-muted-foreground line-through">{course.originalPrice}</span>
               )}
