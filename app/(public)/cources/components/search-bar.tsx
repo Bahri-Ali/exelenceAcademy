@@ -17,7 +17,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         placeholder="ابحث عن دورة..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full pr-10 bg-card border-(--primary)  focus:border-(--primary)"
+        className="w-full pr-10  border-(--primary)  "
       />
     </div>
   );

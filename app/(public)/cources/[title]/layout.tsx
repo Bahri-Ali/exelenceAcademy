@@ -1,23 +1,17 @@
+import type React from 'react';
+import type { Metadata } from 'next';
 
-import type React from "react"
+import { Suspense } from 'react';
 
-import { Suspense } from "react"
-
-
-import i18n from "@/app/in18/i18n"
-
+export const metadata: Metadata = {
+  title: 'دورة إتقان القرآن الكريم',
+  description: 'تعلم تلاوة القرآن الكريم بالتجويد الصحيح',
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-  return (
-    <html lang={i18n.language} dir={i18n.language==='ar'?'rtl':'ltr'}>
-      <body className={``}>
-        <Suspense fallback={null}>{children}</Suspense>
-
-      </body>
-    </html>
-  )
+  return <Suspense fallback={null}>{children}</Suspense>;
 }

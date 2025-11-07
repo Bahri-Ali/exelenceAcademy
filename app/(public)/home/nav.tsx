@@ -28,7 +28,7 @@ export default function NavBar() {
         <Image src="/mainLogo.png"  width={172} height={40} alt="Logo" />
       </div>
 
-      <div className={`hidden md:flex ${i18n.language=='ar'?'flex-row' : 'flex-row-reverse'} items-center gap-6 `}>
+      <div className={`hidden md:flex  items-center gap-6 `}>
         {links.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -37,7 +37,7 @@ export default function NavBar() {
               href={link.href}
               style={{ fontSize: '15px', fontStyle: 'bold', lineHeight: '24px' }}
               className={`pb-1 border-b-[1px]  text-[15px] font-bold leading-[24px] ${
-                isActive ? 'text-(--primary) border-(--primary)' : 'text-(--tages) border-none hover:text-(--primary) hover:border-gray-400'
+                isActive ? 'text-(--primary) border-(--primary)' : 'text-(--tages) border-none hover:text-(--primary) hover:border-(--primary)'
               }`}
             >
               {link.label}
