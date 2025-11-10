@@ -2,8 +2,8 @@
 @import 'tw-animate-css';
 
 :root {
-  --background: hsl(0 0% 100%);
-  --mainBackground: white;
+  --background: red;
+  --mainBackground: hsl(240, 50%, 92%)
   --tages:hsla(0, 0%, 40%, 1);
   --bg:hsl(219, 51%, 42%, 0.14);
   --foreground: hsl(210 25% 7.8431%);

@@ -18,6 +18,7 @@ export interface Course {
   startDate: string;
   whatYouLearn: string[];
   requirements: string[];
+  isSuggest:Boolean;
 }
 
 export interface FilterState {

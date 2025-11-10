@@ -8,8 +8,6 @@ import { coursesData } from './lib/cources-data';
 import type { FilterState } from './lib/types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Cource from '../home/cource';
-import Cources from '../home/courses';
 const COURSES_PER_PAGE = 6;
 
 export default function CoursesPage() {

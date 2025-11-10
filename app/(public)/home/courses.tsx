@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence ,Variants} from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Cource from './cource';
 import Pagination from './pagination';
-
+import { coursesData } from '../cources/lib/cources-data';
+import { Course } from '../cources/lib/types';
 import { useTranslation } from 'react-i18next';
 
 export default function Cources() {
@@ -13,12 +14,7 @@ export default function Cources() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const totalCourses: number = 16;
-  const totalPages: number = Math.ceil(totalCourses / coursesPerPage);
-
-  const courses: number[] = Array.from({ length: totalCourses }, (_, i) => i + 1);
-  const startIndex: number = (currentPage - 1) * coursesPerPage;
-  const currentCourses: number[] = courses.slice(startIndex, startIndex + coursesPerPage);
-  const {t}=useTranslation()
+  const { t } = useTranslation();
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -33,9 +29,9 @@ export default function Cources() {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); 
-  const animationVariants:Variants  = {
-    hidden: { opacity: 0, y : 50, scale: 0.95 },
+  }, []);
+  const animationVariants: Variants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
@@ -44,21 +40,20 @@ export default function Cources() {
     },
     exit: { opacity: 0, y: -50, scale: 0.95, transition: { duration: 0.4 } },
   };
-
+  const filterData = coursesData.filter((c) => c.isSuggest).slice(0, 3);
   return (
-    <section className="w-[90%] mx-auto min-h-screen py-12 px-2 sm:px-6 lg:px-12">
+    <section className="w-[90%] mx-auto min-h-screen py-12  px-2 sm:px-6 lg:px-12">
       <h1 className="text-(--primary) font-cairo font-bold text-[28px] sm:text-[36px] leading-[62px] tracking-[-0.06em] text-center mb-12">
-        {t('Suggested-courses')} 
+        {t('Suggested-courses')}
       </h1>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentPage}
-          variants={animationVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          className="
+      <motion.div
+        key={currentPage}
+        variants={animationVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="
             grid
             grid-cols-1
             sm:grid-cols-2
@@ -66,25 +61,18 @@ export default function Cources() {
             gap-8
             place-items-center
             w-full
+            
           "
-        >
-          {currentCourses.map((id: number) => (
-            <motion.div key={id} variants={animationVariants} className="w-full flex justify-center">
-              <Cource />
+      >
+        {/* isSuggest  <Cource key={Number(c.id)} course={c} index={Number(c.id)}></Cource> */}
+        {filterData.map((c: Course, index) =>
+          c.isSuggest ? (
+            <motion.div variants={animationVariants} className="w-full flex justify-center">
+              <Cource key={Number(c.id)} course={c} index={Number(c.id)}></Cource>
             </motion.div>
-          ))}
-        </motion.div>
-      </AnimatePresence>
-
-      <div className="flex justify-center mt-12">
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-          siblingCount={1}
-          isMobile={isMobile}
-        />
-      </div>
+          ) : null,
+        )}
+      </motion.div>
     </section>
   );
 }

@@ -8,7 +8,7 @@ export default function Said() {
   return (
     <div className="min-h-[50vh] flex flex-col justify-evenly w-[90%] md:w-[80%] m-auto py-6">
       <div
-        className={`flex flex-col  h-[10%] text-center gap-10 ${i18n.language === 'ar' ? 'items-end' : 'items-start'} `}
+        className={`flex flex-col  h-[10%] text-center gap-10 `}
       >
         <h1 className="font-cairo font-bold text-[24px] sm:text-[28px] md:text-[36px] leading-[120%] text-(--primary)">
           {t('They-said')}

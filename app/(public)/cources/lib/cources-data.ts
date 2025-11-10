@@ -1,5 +1,3 @@
-
-
 import type { Course } from './types';
 
 export const coursesData: Course[] = [
@@ -35,6 +33,7 @@ export const coursesData: Course[] = [
       'اختبار وتصحيح البرامج',
     ],
     requirements: ['معرفة أساسية بمبادئ البرمجة', 'حاسوب بمعالج وذاكرة عادية', 'رغبة في تعلم لغة برمجة جديدة'],
+    isSuggest: true,
   },
   {
     id: '2',
@@ -71,6 +70,7 @@ export const coursesData: Course[] = [
       'فهم أساسي للروبوتات والأتمتة',
       'نظام Linux مثبت على الحاسوب',
     ],
+    isSuggest: true,
   },
   {
     id: '3',
@@ -108,6 +108,7 @@ export const coursesData: Course[] = [
       'فهم مبادئ المنطق الرقمي',
       'رغبة في العمل في المجال الصناعي',
     ],
+    isSuggest: false,
   },
   {
     id: '4',
@@ -142,6 +143,7 @@ export const coursesData: Course[] = [
       'دروس في التفسير الميسر',
     ],
     requirements: ['عدم الحاجة إلى معرفة سابقة', 'جهاز للاستماع والمشاهدة', 'الرغبة في تعلم القرآن الكريم وحفظه'],
+    isSuggest: false,
   },
   {
     id: '5',
@@ -178,6 +180,7 @@ export const coursesData: Course[] = [
       'فهم عميق لمبادئ الذكاء الاصطناعي',
       'خبرة بالروبوتات والأنظمة المدمجة',
     ],
+    isSuggest: false,
   },
   {
     id: '6',
@@ -209,6 +212,7 @@ export const coursesData: Course[] = [
       'التعامل مع الملفات وقواعد البيانات',
     ],
     requirements: ['معرفة أساسية بمبادئ البرمجة', 'حاسوب بموارد متوسطة', 'رغبة في تعلم البرمجة واحترافها'],
+    isSuggest: false,
   },
   {
     id: '7',
@@ -246,6 +250,7 @@ export const coursesData: Course[] = [
       'معرفة بالمصطلحات الطبية والعلمية',
       'رغبة في تطوير المهارات الحديثة',
     ],
+    isSuggest: false,
   },
   {
     id: '8',
@@ -282,6 +287,7 @@ export const coursesData: Course[] = [
       'فهم الإحصائيات والاحتمالات',
       'خبرة بمكتبات ML مثل Scikit-learn و TensorFlow',
     ],
+    isSuggest: false,
   },
   {
     id: '9',
@@ -315,6 +321,7 @@ export const coursesData: Course[] = [
       'مشاريع عملية وحقيقية',
     ],
     requirements: ['معرفة أساسية بأجهزة الحاسوب', 'حس فني وإبداعي عالي', 'توفر برامج التصميم الاحترافية'],
+    isSuggest: true,
   },
   {
     id: '10',
@@ -353,6 +360,7 @@ export const coursesData: Course[] = [
       'فهم المفاهيم الكهربائية الأساسية',
       'رغبة في العمل بمشاريع عملية',
     ],
+    isSuggest: true,
   },
 ];
 
